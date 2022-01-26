@@ -1,0 +1,83 @@
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatX {
+  0%,
+  100% {
+    transform: translateX(10px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes slideFloat {
+  0%,
+  100% {
+    transform: translateX(10px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shakeRotate {
+  from,
+  to,
+  30% {
+    transform: rotate(0deg);
+  }
+
+  3%,
+  9% {
+    transform: rotate(-10deg);
+  }
+
+  6%,
+  12% {
+    transform: rotate(10deg);
+  }
+
+  15%,
+  21%,
+  27% {
+    transform: rotate(-4deg);
+  }
+
+  18%,
+  24% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes shineAni {
+  50% {
+    background-position: -100%;
+  }
+}
+
+@keyframes shineAni2 {
+  50% {
+    background-position: 0 -100%;
+  }
+}

@@ -1,0 +1,177 @@
+//header
+header {
+  height: 60px;
+  background: #d70c18;
+  font-family: "微軟正黑體", "MicrosoftJhengHei", "Noto Sans TC",
+    "Apple LiGothic Medium", "Microsoft JhengHei", "LiHei Pro Medium", "STHeiti",
+    "Microsoft YaHei", arial;
+  z-index: 100;
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 1240px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    @include box(155, 40, relative);
+    @include bg("../img/nav/ts-430.png");
+  }
+
+  .mainMenu {
+    text-align: right;
+    flex: 1;
+
+    .mask {
+      @include area(100%, 100vh);
+      background-color: rgba(109, 153, 152, 0.6);
+      display: none;
+      z-index: 101;
+    }
+
+    ul {
+      top: 0;
+      z-index: 102;
+    }
+
+    li {
+      margin-left: 10px;
+      margin-right: 10px;
+      display: inline;
+
+      a {
+        padding: 1em 0;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}
+
+//footer
+footer {
+  position: relative;
+  height: 56px;
+  width: 100%;
+  bottom: 0;
+  background: #d70c18;
+  background-image: linear-gradient(90deg, #d70c18 50%, #888 51%);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: "微軟正黑體", "MicrosoftJhengHei", "Noto Sans TC",
+    "Apple LiGothic Medium", "Microsoft JhengHei", "LiHei Pro Medium", "STHeiti",
+    "Microsoft YaHei", arial;
+
+  .c-icon {
+    @include box(11, 11, inline-block);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footerArea1,
+  .footerArea2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .footerArea1 {
+    width: 75%;
+    background: #d70c18;
+
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  .footerArea2 {
+    box-sizing: border-box;
+    width: 25%;
+    padding-left: 25px;
+    background: #888888;
+    height: 100%;
+  }
+
+  .footer-logo {
+    @include box(113, 30, relative);
+    @include bg("../img/nav/ts-425.png");
+  }
+}
+
+@media (max-width: 1023px) {
+  header {
+    height: 53px;
+
+    .logo {
+      @include box(131, 34, relative);
+    }
+  }
+
+  footer {
+    height: 35px;
+    background-image: none;
+
+    .footerArea1 {
+      justify-content: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .footerArea2 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .recomBrowser,
+  .copyright {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    .mainMenu {
+      .mobileHide {
+        display: none;
+      }
+    }
+  }
+
+  footer {
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    .mainMenu {
+      font-size: 16px;
+    }
+  }
+}

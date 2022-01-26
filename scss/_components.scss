@@ -1,0 +1,126 @@
+main {
+  overflow: hidden;
+}
+
+.bg {
+  @include area(100%, 100%, absolute);
+  @include position();
+  pointer-events: none;
+}
+
+.label-title {
+  box-sizing: border-box;
+  margin: auto;
+  color: white;
+  font-size: 40px;
+}
+
+.btn {
+  position: relative;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s;
+  z-index: 50;
+  cursor: pointer;
+  background-repeat: repeat-y;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+      95deg,
+      transparent 10%,
+      rgba(white, 0.7) 30%,
+      transparent 50%
+    );
+    background-size: 200%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-20px);
+
+    &::after {
+      animation: shineAni 1s alternate;
+    }
+  }
+
+  &.calc,
+  &.apply {
+    @include area(419px, 123px);
+  }
+
+  &.calc {
+    @include bg("../img/common/calc.png");
+  }
+
+  &.apply {
+    @include bg("../img/common/apply.png");
+    margin-left: 20px;
+  }
+
+  &.apply-main {
+    @include box(365, 96);
+    @include bg("../img/common/apply-main.png");
+    left: calc(50% - 183px);
+    bottom: 93px;
+    margin-bottom: 0;
+  }
+
+  &.apply-call {
+    @include box(970, 213, relative);
+    @include bg("../img/common/apply-call.png");
+    display: block;
+    margin-top: 0;
+  }
+}
+
+@include rwd($md) {
+  .btn {
+    &.calc,
+    &.apply {
+      @include area(298px, 106px);
+    }
+
+    &.apply-main {
+      @include box(242, 63);
+      left: calc(50% - 121px);
+      bottom: 77px;
+    }
+
+    &.apply-call {
+      @include box(667, 146, relative);
+    }
+  }
+}
+
+@include rwd($xs) {
+  .btn {
+    &.calc,
+    &.apply {
+      @include area(265px, 78px);
+    }
+
+    &.apply {
+      margin-top: 40px;
+      margin-left: 0;
+    }
+
+    &.apply-main {
+      @include box(242, 63);
+      left: calc(50% - 121px);
+      bottom: 69px;
+    }
+
+    &.apply-call {
+      @include box(320, 85, relative);
+    }
+  }
+}

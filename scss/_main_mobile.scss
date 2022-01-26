@@ -1,0 +1,200 @@
+@include rwd($xs) {
+  .main-vision {
+    height: 509px;
+    background-image: url('../img/bg/kv_cloud_bg_mobile.png'),
+      url('../img/bg/cloud_bottom.png');
+    background-position: center center, center bottom;
+    background-size: contain, 150%;
+
+    .main-logo {
+      @include box(300, 300);
+      left: calc(50% - 150px);
+    }
+
+    .people-girl {
+      @include box(173, 144);
+      top: 126px;
+      left: calc(50% - 172px);
+    }
+
+    .people-boy {
+      @include box(258, 256);
+      top: 153px;
+      left: calc(50% - 102px);
+    }
+
+    .text-box {
+      top: 450px;
+
+      img {
+        @include box(16, 16, relative);
+      }
+    }
+
+    .bg {
+      .things {
+        &.left {
+          @include box(100, 89);
+          background-image: url('../img/bg/object_left_mobile.png');
+          top: 270px;
+          left: calc(50% - 165px);
+        }
+        &.right {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .gifts {
+    height: 564px;
+    padding: 12px 0 55px 0;
+
+    .gifts-box {
+      flex-direction: column;
+      .gift {
+        @include area(282px, 201px);
+        margin: 0 0 30px 0;
+      }
+    }
+
+    .text-box {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .bg {
+      .things {
+        &.left {
+          display: none;
+        }
+        &.right {
+          @include box(199, 154);
+          top: 450px;
+          left: calc(50% + 19px);
+          z-index: 1;
+        }
+      }
+
+      .cloud {
+        display: none;
+      }
+    }
+  }
+
+  .features {
+    @include bg('../img/bg/bg_cloud_back_mobile.png', center top, cover);
+    height: 1500px;
+    padding: 118px 0 157px 0;
+
+    .label-title {
+      @include area(252px, 70px);
+    }
+
+    &-box {
+      flex-direction: column;
+      padding-top: 50px;
+    }
+
+    &-item {
+      @include area(264px, 354px);
+      margin-bottom: 30px;
+    }
+
+    .body {
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+
+    .bg {
+      .jump {
+        @include box(138, 256);
+        top: 1260px;
+        left: 0;
+      }
+      .cloud-front {
+        height: 150px;
+      }
+    }
+  }
+
+  .application {
+    height: 715px;
+
+    .label-title {
+      @include area(324px, 72px);
+    }
+
+    &-box {
+      width: 100%;
+      margin: 50px auto 0 auto;
+      flex-direction: column;
+
+      .btn {
+        margin: 0 0 30px 0;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .man-hold {
+      @include box(134, 240);
+      top: 468px;
+      left: 25px;
+      
+      .phone {
+        @include box(24, 32);
+        top: 52px;
+        left: 44px;
+      }
+    }
+
+    .bg {
+      .cloud-bottom {
+        height: 106px;
+        bottom: 129px;
+        background-size: 150%;
+        background-position: 100%;
+      }
+    }
+  }
+
+  .note {
+    padding-bottom: 60px;
+
+    .container {
+      max-width: 320px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+  }
+
+  aside {
+    .apply,
+    .calc {
+      @include box(145, 53, fixed);
+    }
+
+    .apply {
+      background-image: url('../img/common/apply-side-mobile.png');
+    }
+
+    .calc {
+      background-image: url('../img/common/calculate-side-mobile.png');
+    }
+
+    &.on {
+      .apply {
+        left: calc(50% + 11px);
+      }
+
+      .calc {
+        left: calc(50% - 156px);
+      }
+    }
+  }
+}
